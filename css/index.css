@@ -142,16 +142,20 @@ button:hover{
 /*Media Queries*/
 @media screen and (max-width: 860px) {
     .artists-container{
-       display:none;
+        align-items: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width:80%;
+        margin:0 auto;
        
     }
     
     .artist{
-        display:none;
-       
+        width:40%;
+        text-align:center;
     }
     .artist img{
-        display:none;
-       
+        width:100%;
     }
 }
