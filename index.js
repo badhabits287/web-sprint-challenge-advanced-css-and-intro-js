@@ -248,20 +248,33 @@ console.log(ReplaceArtist());
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
  */
-function getArtistByIndex(id, name) {
-  /* code here */
-  id = artists[0].id;
-  name = artists[0].name;
-  return `The artist at index ${id} is ${name}.`;
+ 
+function getArtistByIndex(artist,id) {
+  
+  const x = artist[id];
+  x
+  let name = artist[id].name;
+  console.log(`The artist at index ${x.id} is ${x.name}.`);
+  return (`The artist at index ${id} is ${name}.`);
 }
-console.log(getArtistByIndex());
+getArtistByIndex(artists,9);
+
+// function getArtistByIndex(index,x) {
+//   /* code here */
+//   artists[x].id 
+  
+//   var index = artists.map(function (x) {return x.id}).indexOf();
+
+//   return `The artist at index ${artists[index].id} is ${artists[index].name}.`;
+// }
+// console.log(getArtistByIndex(3));
 
 /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
-function get20s() {
+function get20s(years) {
   let filteredArtists = artists.filter((year) => {
     return year.years === "1900-2000";
   });
@@ -308,9 +321,23 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */) {
+function addArtist() {
   /* Code here */
+  artists.push(
+    { id: 20,
+     name: "Badhabits287",
+     years: "1986-still kicking",
+     genre: "random media",
+     nationality: "Uruguay",
+     bio:"some kind of human full of bad habits , knowledge and wisdom seeker. "
+       ,
+     paintings: "few" }
+   )
+  return (artists)
 }
+console.log(addArtist())
+//modified array .
+console.log(artists)
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
