@@ -248,21 +248,42 @@ console.log(ReplaceArtist());
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
  */
- 
-function getArtistByIndex(artist,id) {
-  
-  const x = artist[id];
-  x
-  let name = artist[id].name;
-  console.log(`The artist at index ${x.id} is ${x.name}.`);
-  return (`The artist at index ${id} is ${name}.`);
+
+function getArtistByIndex(artist, id) {
+  const artistByIndex = artist[id];
+
+  // check if an artist exists with that ID in  array.
+
+  // if the id exists in the array this if statement evaluates to true
+  if (artistByIndex) {
+    let name = artist[id].name;
+    console.log(`The artist at index ${id} is ${name}.`);
+    return artistByIndex;
+  } else {
+    console.log();
+    return `No artist foound with that index. Your object has ${artist.length} items`;
+  }
 }
-getArtistByIndex(artists,9);
+
+// return in a variable
+const test = getArtistByIndex(artists, 5);
+console.log(getArtistByIndex(artists, 2, test));
+
+// function getArtistByIndex(name,id) {
+
+//   const x = artists[id];
+
+//   let names = artists[id].name;
+//   console.log(`The artist at index ${x.id} is ${x.name}.`);
+//   return (`The artist at index ${id} is ${name}.`);
+// }
+// getArtistByIndex(artists,9);
+// console.log(getArtistByIndex(9))
 
 // function getArtistByIndex(index,x) {
 //   /* code here */
-//   artists[x].id 
-  
+//   artists[x].id
+
 //   var index = artists.map(function (x) {return x.id}).indexOf();
 
 //   return `The artist at index ${artists[index].id} is ${artists[index].name}.`;
@@ -274,14 +295,24 @@ getArtistByIndex(artists,9);
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1900-2000) */
 
-function get20s(years) {
-  let filteredArtists = artists.filter((year) => {
-    return year.years === "1900-2000";
-  });
+function get20s(artists){
 
-  return filteredArtists;
+  let N = [];
+  let filteredArtists = [];
+  
+for(let i = 0; i<artists.length; i++){
+  N = parseInt(artists[i].years);
+  if (N > 1900 && 2000){
+    filteredArtists.push(artists[i].name);
+    console.log(filteredArtists);
+  }
+  
 }
-console.log(get20s());
+/* Code here */
+return (filteredArtists);
+}
+get20s(artists);
+
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -292,18 +323,18 @@ console.log(get20s());
  * it will remove Amedeo Modigliani from our dataset and log the number 19.
  *
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.
- */
-function removeArtist(artists, id) {
-  /* code here */
-  id = artists[4].id;
-  return artists.filter(function (ele) {
-    return ele != id;
-  });
-}
-var result = removeArtist(artists,artists[4]); 
-console.log(result)
+//  */
+// function removeArtist(artists, id) {
+//   /* code here */
+//   id = artists.id;
+//   return artists.filter(function (e) {
+//     return e != id;
+//   });
+// }
+// var result = removeArtist(artists[4].id);
+// console.log('result' , result )
 
- // result = [1, 2, 3, 4, 5, 7, 8, 9, 0]
+// result = [1, 2, 3, 4, 5, 7, 8, 9, 0]
 /**
 
 
@@ -321,23 +352,23 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist() {
-  /* Code here */
-  artists.push(
-    { id: 20,
-     name: "Badhabits287",
-     years: "1986-still kicking",
-     genre: "random media",
-     nationality: "Uruguay",
-     bio:"some kind of human full of bad habits , knowledge and wisdom seeker. "
-       ,
-     paintings: "few" }
-   )
-  return (artists)
-}
-console.log(addArtist())
-//modified array .
-console.log(artists)
+// function addArtist() {
+//   /* Code here */
+//   artists.push(
+//     { id: 20,
+//      name: "Badhabits287",
+//      years: "1986-still kicking",
+//      genre: "random media",
+//      nationality: "Uruguay",
+//      bio:"some kind of human full of bad habits , knowledge and wisdom seeker. "
+//        ,
+//      paintings: "few" }
+//    )
+//   return (artists)
+// }
+// addArtist();
+// //modified array .
+// console.log(artists)
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
